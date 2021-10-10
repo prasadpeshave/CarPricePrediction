@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body >
+
+    <div style="text-align:center;">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2 style="border: #fff;border-width: 30px;">Car Price Prediction</h2><br>
+            <h3>&nbspYear&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input id="first" name="Year" type="number "></h3>
+            <h3>Showroom Price
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input
+                    id="second" name="Present_Price" required="required"></h3>
+            <h3>Kilometers
+                Driven&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input
+                    id="third" name="Kms_Driven" required="required"></h3>
+            <h3>Number Of Previous br Owners &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="fourth" name="Owner"
+                    required="required"></h3>
+            <h3>Fuel
+                type&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select
+                    name="Fuel_Type_Petrol" id="fuel" required="required">
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Diesel">CNG</option>
+                </select></h3>
+            <h3>Dealer /
+                Individual&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select
+                    name="Seller_Type_Individual" id="resea" required="required">
+                    <option value="Dealer">Dealer</option>
+                    <option value="Individual">Individual</option>
+                </select></h3>
+            <h3>Transmission
+                type&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select
+                    name="Transmission_Mannual" id="research" required="required">
+                    <option value="Mannual">Manual Car</option>
+                    <option value="Automatic">Automatic Car</option>
+                </select></h3>
+            <br>
+            <button style="width: max-content;" id="sub" type="submit ">Calculate the Selling Price</button>
+        <br><br>
+        </form>
+
+
+
+        <h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+
+            text-align: center;
+            background-color: #2c142c;
+            font-family: sans-serif;
+            color: #fff;
+            animation-name: example;
+            animation-duration: 4s;
+        }
+        form{
+            border: double;
+            border-width:20px;
+        }
+        h2 {
+   border: 5px solid white;
+}
+span{
+    position:relative;
+    top:1px;
+    display:inline-block;
+    border-bottom:5px solid #AAA;
+}
+
+        input {
+            background-color: #884788;
+
+            color: rgb(255, 255, 255);
+        }
+
+
+        #fuel {
+            width: 270px;
+            height: 30px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 15px;
+        }
+
+        #fuel:hover {
+            background-color: rgb(187, 87, 157);
+        }
+
+        #research {
+            width: 270px;
+            height: 30px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 15px;
+        }
+
+        #research:hover {
+            background-color: rgb(187, 87, 157);
+        }
+
+        #resea {
+            width: 270px;
+            height: 30px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 15px;
+        }
+
+        #resea:hover {
+            background-color: rgb(187, 87, 157);
+        }
+
+        #sub {
+            width: 270px;
+            height: 30px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 15px;
+        }
+
+        #sub:hover {
+            background-color: darkcyan;
+        }
+
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            width: 300px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
